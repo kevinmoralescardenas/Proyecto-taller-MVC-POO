@@ -206,7 +206,7 @@ public class Main {
             System.out.println("5. Eliminar Producto");
             System.out.println("6. Salir");
             
-            System.out.print("Seleccione una opción: ");
+            System.out.print("Seleccione una opcion: ");
             opcion = teclado.nextInt();
             teclado.nextLine();
             
@@ -214,30 +214,75 @@ public class Main {
                 case 1:
 
                     System.out.println("Registrar producto");
-                    int codigo;
+                    int codigo = 0;
                     String nombre;
-                    double precio;
-                    int stock;
-                    System.out.print("Código: ");
-                    codigo = teclado.nextInt();
-                    teclado.nextLine();
+                    double precio = 0;
+                    int stock = 0;
+                    try {
+                        
+                        System.out.print("Codigo: ");
+                        codigo = teclado.nextInt();
+
+                        }
+                        catch(Exception e){
+
+                        System.out.println("Debe ingresar un número");
+                        teclado.nextLine();
+
+                           }
+                    
+                    
                     System.out.print("Nombre: ");
                     nombre = teclado.nextLine();
-                    System.out.print("Precio: ");
-                    precio = teclado.nextDouble();
+                    
+                    try{
+
+                        System.out.print("Precio: ");
+                        precio = teclado.nextDouble();
+
+                        if(precio < 0){
+
+                            throw new Exception(
+                                "Precio inválido"
+                            );
+
+                        }
+
+                    }
+                   catch(Exception e){
+
+                   System.out.println(e.getMessage());
+
+                    }
+
                     Agregar:
-                    System.out.print("Stock: ");
-                    stock = teclado.nextInt();
-                    Producto producto =
-                    new Producto(codigo,nombre,precio,stock);
+                    try{
+
+                        System.out.print("Precio: ");
+                        precio = teclado.nextDouble();
+
+                        if(precio < 0){
+
+                            throw new Exception("Precio inválido"
+                        );
+
+                        }
+
+                        }
+                        catch(Exception e){
+
+                        System.out.println(e.getMessage());
+
+                        }
+
+                    
+                    Producto producto = new Producto(codigo,nombre,precio,stock);
                     inventario.add(producto);
-                    System.out.println("Producto registrado correctamente");
-
-
-
+                    System.out.println("Producto registrado correctamente");                                                                                                                       
 
                 break;
-                
+
+     
                 case 2:
 
                     System.out.println("Mostrar productos");
@@ -248,7 +293,6 @@ public class Main {
                     System.out.println("----------------");
 
                     }
-
 
                 break;
                 
@@ -294,7 +338,7 @@ public class Main {
                     
                 break;
                 case 5:
-                    System.out.print("Código del producto a eliminar: ");
+                    System.out.print("Codigo del producto a eliminar: ");
                     int codigoEliminar = teclado.nextInt();
                     int posicion = -1;
                     for (int i = 0; i < inventario.size(); i++) {
@@ -315,7 +359,7 @@ public class Main {
                 break;
                 default:
 
-                    System.out.println("Opción no válida");
+                    System.out.println("Opcion no valida");
 
             }
 
