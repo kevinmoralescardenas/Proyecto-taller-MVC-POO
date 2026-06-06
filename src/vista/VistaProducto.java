@@ -1,6 +1,8 @@
 package vista;
 
 import java.util.Scanner;
+import java.util.ArrayList; 
+import modelo.Producto;
 
 public class VistaProducto {
     private Scanner teclado;
@@ -29,4 +31,24 @@ public class VistaProducto {
         System.out.println("5. Eliminar producto");
         System.out.println("6. Salir");
     }
+    public void mostrarProductos(ArrayList<Producto> productos) {
+        if(productos.isEmpty()) {
+
+            System.out.println(
+            "No existen productos registrados");
+
+            return;
+        }
+
+        for (Producto producto : productos) {
+
+            producto.mostrarInformacion();
+
+            System.out.println("-------------------");
+
+        }
+    }
+    
+
+    
 }

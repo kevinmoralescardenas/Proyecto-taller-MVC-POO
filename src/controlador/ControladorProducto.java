@@ -19,6 +19,10 @@ public class ControladorProducto {
     public int totalProductos() {
         return inventario.size();
     }
+    public ArrayList obtenerProductos() {
+        return inventario;
+    }
+
     
 
 
