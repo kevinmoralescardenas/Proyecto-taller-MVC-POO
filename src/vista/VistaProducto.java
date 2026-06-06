@@ -1,7 +1,22 @@
-
 package vista;
 
+import java.util.Scanner;
+
 public class VistaProducto {
+    private Scanner teclado;
+    
+    public VistaProducto() {
+    teclado = new Scanner(System.in);
+    }
+    
+    public int leerCodigo() {
+        System.out.print("Código: ");
+
+        return teclado.nextInt();
+    }
+
+
+    
     public void mostrarMenu() {
         System.out.println();
         System.out.println("================================");
