@@ -4,7 +4,7 @@ import modelo.Usuario;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class VistaUsuario {
+public class VistaUsuario extends VistaProducto{
 
     private Scanner teclado;
 
@@ -26,21 +26,7 @@ public class VistaUsuario {
         System.out.print("Elija una opción: ");
     }
 
-    public int leerOpcion() {
-
-        while (true) {
-            try {
-                int opcion = teclado.nextInt();
-                teclado.nextLine();
-                return opcion;
-
-            } catch (java.util.InputMismatchException e) {
-
-                System.out.println("❌ Error: Debe ingresar un número entero.");
-                teclado.nextLine();
-            }
-        }
-    }
+    
 
     public int leerId() {
 
