@@ -1,6 +1,9 @@
 
 package vista;
 
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
 
 public class VentanaLogin extends javax.swing.JFrame {
     
@@ -30,6 +33,7 @@ public class VentanaLogin extends javax.swing.JFrame {
         jtfUsuario = new javax.swing.JTextField();
         jpfContrasena = new javax.swing.JPasswordField();
         jbtnEnviar = new javax.swing.JButton();
+        jbtnSalir = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -59,29 +63,35 @@ public class VentanaLogin extends javax.swing.JFrame {
 
         jpfContrasena.addActionListener(this::jpfContrasenaActionPerformed);
 
-        jbtnEnviar.setText("ENVIAR");
+        jbtnEnviar.setText("Enviar");
+        jbtnEnviar.addActionListener(this::jbtnEnviarActionPerformed);
+
+        jbtnSalir.setText("Salir");
+        jbtnSalir.addActionListener(this::jbtnSalirActionPerformed);
 
         javax.swing.GroupLayout jpLoguinLayout = new javax.swing.GroupLayout(jpLoguin);
         jpLoguin.setLayout(jpLoguinLayout);
         jpLoguinLayout.setHorizontalGroup(
             jpLoguinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpLoguinLayout.createSequentialGroup()
-                .addGap(48, 48, 48)
                 .addGroup(jpLoguinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpLoguinLayout.createSequentialGroup()
-                        .addGap(91, 91, 91)
-                        .addComponent(jlTitulo))
-                    .addGroup(jpLoguinLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
+                        .addGap(58, 58, 58)
                         .addGroup(jpLoguinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jlUsuario)
                             .addComponent(jlContrasena))
                         .addGap(18, 18, 18)
-                        .addGroup(jpLoguinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jbtnEnviar)
-                            .addGroup(jpLoguinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jtfUsuario)
-                                .addComponent(jpfContrasena, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)))))
+                        .addGroup(jpLoguinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jtfUsuario)
+                            .addComponent(jpfContrasena, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)))
+                    .addGroup(jpLoguinLayout.createSequentialGroup()
+                        .addGap(136, 136, 136)
+                        .addComponent(jlTitulo))
+                    .addGroup(jpLoguinLayout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(jbtnEnviar)
+                        .addGap(54, 54, 54)
+                        .addComponent(jbtnSalir)))
                 .addContainerGap(90, Short.MAX_VALUE))
         );
         jpLoguinLayout.setVerticalGroup(
@@ -98,7 +108,9 @@ public class VentanaLogin extends javax.swing.JFrame {
                     .addComponent(jlContrasena)
                     .addComponent(jpfContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
-                .addComponent(jbtnEnviar)
+                .addGroup(jpLoguinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtnEnviar)
+                    .addComponent(jbtnSalir))
                 .addContainerGap(58, Short.MAX_VALUE))
         );
 
@@ -126,6 +138,14 @@ public class VentanaLogin extends javax.swing.JFrame {
     private void jpfContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpfContrasenaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jpfContrasenaActionPerformed
+
+    private void jbtnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSalirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnSalirActionPerformed
+
+    private void jbtnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEnviarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnEnviarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,8 +183,8 @@ public class VentanaLogin extends javax.swing.JFrame {
 
     // --- MÉTODOS PARA ESCUCHAR LOS CLICS DESDE EL CONTROLADOR (Listeners) ---
     public void conectarBotones(ActionListener oyente) {
-        btnEnviar.addActionListener(oyente);
-        btnSalir.addActionListener(oyente);
+        jbtnEnviar.addActionListener(oyente);
+        jbtnSalir.addActionListener(oyente);
     }
 
     // Despliega ventanas de alerta flotantes estándar de Swing
@@ -175,6 +195,7 @@ public class VentanaLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbtnEnviar;
+    private javax.swing.JButton jbtnSalir;
     private javax.swing.JLabel jlContrasena;
     private javax.swing.JLabel jlTitulo;
     private javax.swing.JLabel jlUsuario;

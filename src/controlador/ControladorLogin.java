@@ -14,7 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import vista.VentanaLogin;
-//import vista.VentanaPrincipal;
+//import vista.VentanaPrincipal; no utilizamos esta importacion
 
 
 // Agregamos "implements ActionListener" para que la clase pueda escuchar botones
@@ -66,13 +66,13 @@ public class ControladorLogin implements ActionListener{
             vista.mostrarMensajeAlerta("¡Acceso Permitido! Bienvenido al sistema.");
             
             // 1. Creamos la ventana principal
-            VentanaPrincipal menuPrincipal = new VentanaPrincipal();
+            //VentanaPrincipal menuPrincipal = new VentanaLogin();
             
             // 2. NUEVO: Creamos su controlador y le pasamos la ventana para que se conecten
-            new ControladorPrincipal(menuPrincipal);
+            //new ControladorPrincipal(menuPrincipal);
             
             // 3. Mostramos la ventana principal en pantalla
-            menuPrincipal.setVisible(true);
+            //menuPrincipal.setVisible(true);
             
             // 4. Destruimos el Login de la memoria
             vista.dispose(); 
@@ -92,9 +92,9 @@ public class ControladorLogin implements ActionListener{
                 "WHERE usuario = ? AND clave = ?";
 
         try (Connection con = Conexion.obtenerConexion();
-             PreparedStatement ps = con.prepareStatement(sql)) {
+             PreparedStatement ps = con.prepareStatement(sql)) { // recibe la consulta sql (tiene canal abierto)
             
-            ps.setString(1, txtUsuario);
+            ps.setString(1, txtUsuario); //modifiqueme los parametros y cambielos porque lo que captura
             ps.setString(2, txtClave);
 
             try (ResultSet rs = ps.executeQuery()) {
