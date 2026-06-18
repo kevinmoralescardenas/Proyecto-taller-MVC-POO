@@ -1,13 +1,10 @@
 
 package modelo;
 
-/**
- *
- * @author usuario
- */
+
 public class Empleado extends Persona{
     
-    private String cargo;
+    private String cargo;//varchar (20) limite de caracteres
 
     public Empleado() {
 

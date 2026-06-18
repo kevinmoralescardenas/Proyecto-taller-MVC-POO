@@ -1,8 +1,8 @@
 package modelo;
 
 public class Usuario extends Persona {
-    private String usuario;
-    private String password;
+    private String usuario;//varchar (20) limite de caracteres
+    private String password;//varchar (20) limite de caracteres
 
     public Usuario() {
 

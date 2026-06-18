@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package vista;
 
-/**
- *
- * @author usuario
- */
+
 public class VentanaLogin extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaLogin.class.getName());
@@ -28,6 +22,7 @@ public class VentanaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jpLoguin = new javax.swing.JPanel();
         jlTitulo = new javax.swing.JLabel();
         jlUsuario = new javax.swing.JLabel();
@@ -35,6 +30,17 @@ public class VentanaLogin extends javax.swing.JFrame {
         jtfUsuario = new javax.swing.JTextField();
         jpfContrasena = new javax.swing.JPasswordField();
         jbtnEnviar = new javax.swing.JButton();
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -145,8 +151,29 @@ public class VentanaLogin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new VentanaLogin().setVisible(true));
     }
+    // --- MÉTODOS ENCAPSULADOS PARA EXTRAER LA INFORMACIÓN DIGITADA ---
+    public String getUsuario() {
+        return jtfUsuario.getText().trim();
+    }
+
+    public String getClave() {
+        // Convierte el array de caracteres de JPasswordField a un String plano
+        return new String(jpfContrasena.getPassword());
+    }
+
+    // --- MÉTODOS PARA ESCUCHAR LOS CLICS DESDE EL CONTROLADOR (Listeners) ---
+    public void conectarBotones(ActionListener oyente) {
+        btnEnviar.addActionListener(oyente);
+        btnSalir.addActionListener(oyente);
+    }
+
+    // Despliega ventanas de alerta flotantes estándar de Swing
+    public void mostrarMensajeAlerta(String mensaje) {
+        JOptionPane.showMessageDialog(this, mensaje, "Notificación", JOptionPane.INFORMATION_MESSAGE);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JButton jbtnEnviar;
     private javax.swing.JLabel jlContrasena;
     private javax.swing.JLabel jlTitulo;

@@ -1,15 +1,12 @@
 
 package modelo;
 
-/**
- *
- * @author usuario
- */
+
 public class Producto {
-    private int codigo;
-    private String nombre;
-    private double precio;
-    private int stock;
+    private int codigo;//serial PK
+    private String nombre;//varchar (20) limite de caracteres
+    private double precio;// Numeric (10, 2) entreo y decimal
+    private int stock;// integer
     
     public  Producto() {
 

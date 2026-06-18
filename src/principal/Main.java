@@ -31,13 +31,13 @@ public class Main {
         do {
 
             System.out.println("\n========================================");
-            System.out.println("   SISTEMA DE INVENTARIO - MENÚ GLOBAL");
+            System.out.println("   SISTEMA DE INVENTARIO - MENU GLOBAL");
             System.out.println("========================================");
-            System.out.println("1. Módulo de Productos");
-            System.out.println("2. Módulo de Usuarios");
-            System.out.println("3. Módulo de Empleados");
+            System.out.println("1. Modulo de Productos");
+            System.out.println("2. Modulo de Usuarios");
+            System.out.println("3. Modulo de Empleados");
             System.out.println("4. Salir");
-            System.out.print("Seleccione una opción: ");
+            System.out.print("Seleccione una opcion: ");
 
             try {
 

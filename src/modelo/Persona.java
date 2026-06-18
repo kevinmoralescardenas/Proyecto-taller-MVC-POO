@@ -1,14 +1,11 @@
 
 package modelo;
 
-/**
- *
- * @author usuario
- */
+
 public class Persona {
     private int id;
-    private String nombre;
-    private String correo;
+    private String nombre;//varchar (20) limite de caracteres
+    private String correo;//varchar (20) limite de caracteres
     
     public Persona() {
 
